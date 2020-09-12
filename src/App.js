@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ContactHeader from './components/ContactHeader';
+import ContactList from './components/ContactList';
+import AddContact from './components/AddContact';
+
+import './index.scss';
 
 function App() {
+  const contacts = [
+    {id: 1, title: 'Люда', phone: '8 808 900 11 22', desc: 'Люда из поселка Мытелки'},
+    {id: 2, title: 'Бенджамин', phone: '1 800 111 222 333', desc: 'Бенжик из Калифорнии'},
+    {id: 3, title: 'Руслан', phone: '10 800 11 22 33', desc: 'Русик просто'},
+    {id: 4, title: 'Маман', phone: '777 777 77 77', desc: 'Мам0чка'}
+  ];
+
+  const onClickFav = () => {
+    console.log(123);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="contact">
+      <ContactHeader onClickFavorite={onClickFav}/>
+
+      <ContactList contacts={contacts} />
+
+      <AddContact />
+
+      <div className="contact__addForm"></div>
     </div>
   );
 }

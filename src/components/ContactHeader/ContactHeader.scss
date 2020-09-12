@@ -1,0 +1,21 @@
+.contact {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 40px 30px 40px;
+        border-bottom: 2px solid #C4C4C4;
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #0066FF;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+    }
+}
